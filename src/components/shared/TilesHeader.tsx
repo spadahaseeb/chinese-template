@@ -1,11 +1,13 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TilesHeaderLinkContent } from "@/assets/content";
 import { twMerge } from "tailwind-merge";
+import { X } from "lucide-react";
 
 const TilesHeader = () => {
   const listRef = useRef<HTMLUListElement>(null);
   const activeItemRef = useRef<HTMLLIElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     if (activeItemRef.current && listRef.current) {
@@ -54,33 +56,42 @@ const TilesHeader = () => {
   }, []);
 
   return (
-    <div className="drop-shadow-[0_1px_8px_rgba(255,255,255,0.1)] py-6 bg-blue-primary">
+    <div className="drop-shadow-[0_1px_8px_rgba(255,255,255,0.1)] lg:py-6 pt-6 pb-0 bg-blue-primary">
       <div className="container">
         {/* heading */}
-        <div>
+        <div className="flex items-center justify-between">
           <h1 className="uppercase text-[48px] font-extrabold text-white-primary">
             FAN
           </h1>
+
+          <div className="block 2xl:hidden py-[12px]">
+            <X size={42} className="text-white-primary" />
+          </div>
         </div>
 
         {/* links-tile */}
-        <div className="bg-white-tertiary rounded-full mt-4 overflow-hidden">
+        <div className="lg:bg-white-tertiary lg:rounded-full mt-4 overflow-hidden">
           <ul
             ref={listRef}
-            className="w-full flex items-center overflow-x-auto select-none headertile-scrollbar h-10"
+            className="w-full flex items-center overflow-x-auto select-none headertile-scrollbar h-10 gap-2 lg:gap-0"
           >
             {TilesHeaderLinkContent.map((item, idx) => {
-              const isActive = idx === 0;
+              const isActive = idx === activeIndex;
               return (
                 <li
                   key={item.id}
                   ref={isActive ? activeItemRef : null}
                   className={twMerge(
-                    "flex-shrink-0 text-[16px] font-medium text-black-tertiary 2xl:w-[140px]  w-[120px] relative",
-                    isActive ? "text-black-primary font-semibold" : ""
+                    "flex-shrink-0 text-[16px] font-medium text-black-tertiary lg:w-[140px] text-center w-[max-content] py-[10px] px-[8px] border-transparent border-b-[2px]",
+                    isActive
+                      ? "lg:text-black-primary text-white-primary font-semibold border-white-primary lg:border-transparent"
+                      : ""
                   )}
                 >
-                  <span className="w-[max-content] absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-10 cursor-pointer">
+                  <span
+                    onClick={() => setActiveIndex(idx)}
+                    className="cursor-pointer"
+                  >
                     {item.title}
                   </span>
                 </li>

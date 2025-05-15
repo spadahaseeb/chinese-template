@@ -25,6 +25,9 @@ const config: Config = {
           secondary: "#F7F7F7",
           tertiary: "#ECECEC",
         },
+        accent: {
+          brand: "#4B628F",
+        },
       },
       screens: {
         xs: "480px",
