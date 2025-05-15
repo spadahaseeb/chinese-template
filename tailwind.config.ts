@@ -25,16 +25,6 @@ const config: Config = {
           secondary: "#F7F7F7",
           tertiary: "#ECECEC",
         },
-
-        // primary: "#1E3A8A",
-        // secondary: "#FBBF24",
-        // accent: "#4ADE80",
-        // neutral: "#374151",
-        // "base-100": "#FFFFFF",
-        // info: "#3ABFF8",
-        // success: "#36D399",
-        // warning: "#FBBD23",
-        // error: "#F87272",
       },
       screens: {
         xs: "480px",

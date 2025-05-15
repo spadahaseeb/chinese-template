@@ -6,7 +6,7 @@ import HeaderButtons from "@/components/shared/layout/header/HeaderButtons";
 const Header = () => {
   return (
     <>
-      <header className="bg-blue-primary py-[10px]">
+      <header className="bg-blue-primary py-[10px] hidden 2xl:block">
         <div className="container drop-shadow-[0_1px_8px_rgba(255,255,255,0.1)]">
           <div className="flex items-center justify-between">
             {/* navigation-&-logo-container  */}

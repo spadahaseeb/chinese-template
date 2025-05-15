@@ -6,7 +6,7 @@ const EventsShowcase = ({ data, className }: EventsShowcasePropType) => {
   return (
     <section className={twMerge("bg-blue-primary py-10", className)}>
       <div className="container">
-        <main className="grid grid-cols-3 gap-6">
+        <main className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-6 gap-[15px]">
           {data &&
             data.map((item) => (
               <div
@@ -14,19 +14,20 @@ const EventsShowcase = ({ data, className }: EventsShowcasePropType) => {
                 className="rounded-lg overflow-hidden bg-white-primary"
               >
                 <div className="flex items-center gap-4">
-                  <a href="#" className="decoration-none">
+                  <a href="#" className="decoration-none block w-full">
                     <Image
-                      src={item.imageUrl}
-                      alt={item.title}
+                      priority
                       width={384}
                       height={216}
-                      className="object-cover w-full h-[216px]"
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full 2xl:max-w-[384px] h-auto"
                     />
                   </a>
                 </div>
 
                 <div className="py-4 px-2">
-                  <h4 className="pb-3 h-[46px]">
+                  <h4 className="pb-3 min-h-[46px]">
                     <a
                       href="#"
                       className="font-bold text-[18px] leading-[130%] tracking-[-3%]"
