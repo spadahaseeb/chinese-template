@@ -13,13 +13,15 @@ const Header = () => {
             <div className="flex items-center">
               <Navigation data={HeaderNavigationLinkContent} />
               <div className="pl-[158px] px-[7px]">
-                <Image
-                  src="/icons/logo.png"
-                  alt="logo"
-                  width={57}
-                  height={72}
-                  priority
-                />
+                <a href="/">
+                  <Image
+                    src="/icons/logo.png"
+                    alt="logo"
+                    width={57}
+                    height={72}
+                    priority
+                  />
+                </a>
               </div>
             </div>
 
