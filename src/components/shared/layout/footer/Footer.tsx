@@ -9,7 +9,7 @@ const Footer = () => {
           {FooterLinkContent.map((item) => (
             <Link
               href={item.link}
-              className="py-[9px] px-3 flex flex-col items-center justify-center max-w-[75px]"
+              className="py-[9px] xs:px-3 px-[5px] flex flex-col items-center justify-center max-w-[75px]"
               key={item.id}
             >
               <div className="w-6 h-6 text-[24px] pb-[3px] translate-x-[-1px]">

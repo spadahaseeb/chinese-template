@@ -17,7 +17,7 @@ const eventDetail = () => {
         <div className="container pt-10">
           {/* heading  */}
           <div className="text-center">
-            <h2 className="md:text-[28px] text-[20px] font-bold leading-[120%] tracking-[2%] text-white-primary">
+            <h2 className="md:text-[28px] text-[20px] font-bold leading-[120%] md:tracking-[2%] text-white-primary">
               [이벤트 참여] 2025 이벤트를 진행합니다!
             </h2>
             <p className="text-black-tertiary md:text-[14px] text-[12px] font-normal tracking-[-3%] leading-[120%] pt-3">
