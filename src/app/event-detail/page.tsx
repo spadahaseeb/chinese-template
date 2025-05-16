@@ -1,19 +1,18 @@
 "use client";
 import Button from "@/components/shared/Button";
+import ConsentPagePopup from "@/components/shared/popup/ConsentPagePopup";
+import EventApplicationPopup from "@/components/shared/popup/EventApplicationPopup";
 import LoginPopup from "@/components/shared/popup/LoginPopup";
 import { useState } from "react";
 
 const eventDetail = () => {
   const [isLoginPopup, setIsLoginPopup] = useState<boolean>(false);
+  const [isEventApplicationPopup, setIsEventApplicationPopup] =
+    useState<boolean>(false);
+  const [isConsentPagePopup, setIsConsentPagePopup] = useState<boolean>(false);
 
   return (
     <>
-      {isLoginPopup && (
-        <div className="z-20 fixed w-full h-full top-0 left-0 right-0 bg-blue-primary/40 flex items-center justify-center">
-          <LoginPopup onClick={() => setIsLoginPopup(false)} />
-        </div>
-      )}
-
       <section className="bg-blue-primary">
         <div className="container pt-10">
           {/* heading  */}
@@ -55,6 +54,32 @@ const eventDetail = () => {
           </div>
         </div>
       </section>
+
+      {isLoginPopup && (
+        <div className="z-20 fixed w-full h-full top-0 left-0 right-0 bg-blue-primary/40 flex items-center justify-center">
+          <LoginPopup
+            onClick={() => [
+              setIsLoginPopup(false),
+              setIsEventApplicationPopup(true),
+            ]}
+          />
+        </div>
+      )}
+      {isEventApplicationPopup && (
+        <div className="z-20 fixed w-full h-full top-0 left-0 right-0 bg-blue-primary/40 flex items-center justify-center">
+          <EventApplicationPopup
+            onClick={() => [
+              setIsEventApplicationPopup(false),
+              setIsConsentPagePopup(true),
+            ]}
+          />
+        </div>
+      )}
+      {isConsentPagePopup && (
+        <div className="z-20 fixed w-full h-full top-0 left-0 right-0 bg-blue-primary/40 flex items-center justify-center">
+          <ConsentPagePopup onClick={() => setIsConsentPagePopup(false)} />
+        </div>
+      )}
     </>
   );
 };
