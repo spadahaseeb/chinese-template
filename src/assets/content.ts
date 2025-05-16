@@ -1,5 +1,10 @@
 import { Search, UserRound } from "lucide-react";
 import { IconWorld } from "@tabler/icons-react";
+import LionIcon from "@/assets/svg/Lion-icon";
+import MatchIcon from "@/assets/svg/Match-icon";
+import MediaIcon from "@/assets/svg/Media-icon";
+import PersonIcon from "@/assets/svg/Person-icon";
+import ShopingIcon from "@/assets/svg/Shoping-icon";
 
 export const HeaderNavigationLinkContent = [
   {
@@ -144,5 +149,38 @@ export const TilesHeaderLinkContent = [
     id: 9,
     title: "체험단",
     href: "/",
+  },
+];
+
+export const FooterLinkContent = [
+  {
+    id: 1,
+    icon: LionIcon,
+    label: "home",
+    link: "/",
+  },
+  {
+    id: 2,
+    icon: MediaIcon,
+    label: "media",
+    link: "/",
+  },
+  {
+    id: 3,
+    icon: MatchIcon,
+    label: "Match",
+    link: "/",
+  },
+  {
+    id: 4,
+    icon: ShopingIcon,
+    label: "shopping",
+    link: "/",
+  },
+  {
+    id: 5,
+    icon: PersonIcon,
+    label: "my sefc",
+    link: "/",
   },
 ];

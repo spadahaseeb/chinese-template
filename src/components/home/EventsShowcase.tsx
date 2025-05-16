@@ -53,7 +53,7 @@ const EventsShowcase = ({ data, className }: EventsShowcasePropType) => {
       </div>
 
       {/* paginations  */}
-      <div className="flex items-center w-[max-content] mx-auto pb-[100px] gap-2">
+      <div className="flex items-center w-[max-content] mx-auto md:pb-[100px] pb-6 gap-2">
         <button className="w-8 h-8 rounded-lg text-black-tertiary">
           <ChevronLeft size={18} />
         </button>

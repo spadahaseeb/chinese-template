@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Header from "@/components/shared/layout/header/Header";
 import TilesHeader from "@/components/shared/TilesHeader";
-import Footer from "@/components/shared/layout/header/footer";
+import Footer from "@/components/shared/layout/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Fan page",
