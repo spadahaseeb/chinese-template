@@ -18,10 +18,10 @@ const eventDetail = () => {
         <div className="container pt-10">
           {/* heading  */}
           <div className="text-center">
-            <h2 className="text-[28px] font-bold leading-[120%] tracking-[2%] text-white-primary">
+            <h2 className="md:text-[28px] text-[20px] font-bold leading-[120%] tracking-[2%] text-white-primary">
               [이벤트 참여] 2025 이벤트를 진행합니다!
             </h2>
-            <p className="text-black-tertiary text-[14px] font-normal tracking-[-3%] leading-[120%] pt-3">
+            <p className="text-black-tertiary md:text-[14px] text-[12px] font-normal tracking-[-3%] leading-[120%] pt-3">
               신청 기간 | YYYY-MM-DD HH:MM ~ YYYY-MM-DD HH:MM
             </p>
           </div>
@@ -29,12 +29,12 @@ const eventDetail = () => {
           {/* content  */}
           <main className="py-6">
             {/* event-preview card */}
-            <div className="p-10 border-y-1 border-black-secondry">
+            <div className="md:p-10 py-6 px-3 border-y-1 border-black-secondry">
               <div
-                className="w-full h-[1135px] bg-accent-pinktone 
+                className="w-full lg:h-[1135px] md:h-[880px] h-[340px] bg-accent-pinktone 
                 flex items-center justify-center"
               >
-                <p className="text-[24px] font-medium tracking-[-3%] leading-[140%] text-black-primary">
+                <p className="md:text-[24px] text-[14px] font-medium tracking-[-3%] leading-[140%] text-black-primary">
                   이벤트 상세이미지
                 </p>
               </div>
@@ -42,13 +42,13 @@ const eventDetail = () => {
           </main>
 
           {/* button container */}
-          <div className="flex justify-center pb-[100px]">
+          <div className="flex justify-center md:pb-[100px] pb-[73px]">
             {/* button  */}
-            <div className="generic-button-wrapper">
+            <div className="generic-button-wrapper w-full xs:w-[max-content]">
               <Button
                 variant="v1"
                 buttonText="이벤트 신청하기"
-                className="py-[14px] px-[101px]"
+                className="py-[14px] xs:px-[100px] px-0 w-full"
                 onClick={() => setIsLoginPopup(true)}
               />
             </div>

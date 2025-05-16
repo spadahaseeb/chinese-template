@@ -10,12 +10,14 @@ const LoginPopup = ({ onClick }: { onClick?: () => void }) => {
             로그인 후 이용 가능합니다. <br /> 로그인 페이지로 이동하시겠습니까?
           </p>
 
-          <div className="pt-6 flex items-center gap-3" onClick={onClick}>
-            <Button
-              variant="v2"
-              buttonText="취소"
-              className="py-[14px] px-[58px]"
-            />
+          <div className="pt-6 flex items-center gap-3">
+            <div onClick={onClick}>
+              <Button
+                variant="v2"
+                buttonText="취소"
+                className="py-[14px] px-[58px]"
+              />
+            </div>
             <div className="generic-button-wrapper" onClick={onClick}>
               <Button
                 variant="v1"
