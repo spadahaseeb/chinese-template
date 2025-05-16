@@ -7,7 +7,7 @@ const Navigation = ({ data, className }: NavigationPropType) => {
   return (
     <>
       <div className={twMerge("flex items-center gap-8", className)}>
-        <div>
+        <div className="cursor-pointer">
           <AlignJustify
             className="w-[32px] h-[32px] text-white-primary"
             strokeWidth={1.5}

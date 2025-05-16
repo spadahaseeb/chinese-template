@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         black: {
           primary: "#222222",
+          secondry: "#4E4E4E",
           tertiary: "#7A7A7A",
         },
         blue: {
@@ -27,6 +28,7 @@ const config: Config = {
         },
         accent: {
           brand: "#4B628F",
+          pinktone: "#FFDBDB",
         },
       },
       screens: {

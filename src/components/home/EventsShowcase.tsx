@@ -19,7 +19,10 @@ const EventsShowcase = ({ data, className }: EventsShowcasePropType) => {
                 className="rounded-lg overflow-hidden bg-white-primary"
               >
                 <div className="flex items-center gap-4">
-                  <a href="#" className="decoration-none block w-full">
+                  <a
+                    href="/event-detail"
+                    className="decoration-none block w-full"
+                  >
                     <Image
                       priority
                       width={384}
@@ -34,7 +37,7 @@ const EventsShowcase = ({ data, className }: EventsShowcasePropType) => {
                 <div className="py-4 px-2">
                   <h4 className="pb-3 min-h-[46px]">
                     <a
-                      href="#"
+                      href="/event-detail"
                       className="font-bold text-[18px] leading-[130%] tracking-[-3%]"
                     >
                       {item.title}

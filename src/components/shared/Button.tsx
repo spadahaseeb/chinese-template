@@ -7,7 +7,7 @@ const Button = ({
   buttonText,
   buttonIcon,
   butonLink,
-  variant,
+  variant = "default",
   className,
   onClick,
   buttonIconClassName,
@@ -17,47 +17,55 @@ const Button = ({
   disabled,
   iconPosition,
 }: ButtonPropType) => {
-  const Content = () => (
-    <div>
+  const baseClasses = ButtonVariant({ variant });
+
+  const content = (
+    <>
       {buttonIcon && (
         <span className={twMerge("", buttonIconClassName)}>{buttonIcon}</span>
       )}
       {buttonText && (
-        <p className={twMerge("", buttonTextClassName)}>{buttonText}</p>
+        <span className={twMerge("", buttonTextClassName)}>{buttonText}</span>
       )}
-    </div>
+      {children}
+    </>
   );
 
-  return butonLink ? (
-    <Link
-      href={butonLink || "/"}
-      className={twMerge("group", ButtonVariant({ variant, className }))}
-    >
-      <Content />
-    </Link>
-  ) : (
+  if (butonLink) {
+    return (
+      <Link
+        href={butonLink || "/"}
+        className={twMerge("group relative", baseClasses, className)}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
     <button
+      type={type || "button"}
+      disabled={disabled}
+      className={twMerge("group relative", baseClasses, className)}
       onClick={onClick}
-      className={twMerge("group", ButtonVariant({ variant, className }))}
     >
-      <Content />
+      {content}
     </button>
   );
 };
 
 export default Button;
 
-// tailwind-variants
 const ButtonVariant = tv({
-  base: "ease-out duration-300 relative capitalize text-center flex items-center justify-center",
+  base: "ease-out duration-300 rounded-lg text-[16px] font-semibold flex items-center justify-center",
   variants: {
     variant: {
-      v1: "w-[148px] h-[42px] text-[15px] font-medium border border-white rounded-lg text-white bg-transparent hover:bg-white hover:text-black",
-      v2: "w-[161px] h-[54px] bg-accent-gold text-black text-[15px] rounded-normal font-medium",
-      v3: "w-[51px] h-[51px] rounded-full font-medium",
-      v4: "w-10 h-10 bg-white text-black text-[13px] rounded-full font-normal",
-      v5: "w-[max-content] h-[max-content] border-black text-black hover:bg-black-deep hover:text-white border-black border-1 rounded-full hover:border-transparent",
-      default: "w-[max-content] h-[max-content]",
+      v1: "bg-gradient-to-b from-[#32376C] to-[#000321] text-white-primary",
+      v2: "bg-white-primary text-black-primary",
+      v3: "bg-red-500 text-white py-3 px-6",
+      v4: "bg-red-500 text-white py-3 px-6",
+      v5: "bg-red-500 text-white py-3 px-6",
+      default: "w-[max-content] h-[max-content] rounded-lg",
     },
   },
   defaultVariants: {

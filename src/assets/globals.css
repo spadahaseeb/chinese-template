@@ -24,4 +24,8 @@
   .headertile-scrollbar::-webkit-scrollbar-thumb {
     @apply w-[0px] h-[0px];
   }
+
+  .generic-button-wrapper {
+    @apply bg-gradient-to-br from-white-primary to-transparent w-[max-content] h-[max-content] rounded-lg overflow-hidden border-none p-[1px];
+  }
 }
