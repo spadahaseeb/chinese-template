@@ -60,12 +60,12 @@ const TilesHeader = () => {
       <div className="container">
         {/* heading */}
         <div className="flex items-center justify-between">
-          <h1 className="uppercase text-[48px] font-extrabold text-white-primary">
+          <h1 className="uppercase lg:text-[48px] sm:text-[30px] text-[18px] font-extrabold text-white-primary">
             FAN
           </h1>
 
           <div className="block 2xl:hidden py-[12px]">
-            <X size={42} className="text-white-primary" />
+            <X className="text-white-primary w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
           </div>
         </div>
 
